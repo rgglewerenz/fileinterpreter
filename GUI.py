@@ -438,7 +438,7 @@ def spacing():
                         relheight =widHeight                        
                     )   
     #runs the command every 0.1 second
-    #threading.Timer(0.1, spacing).start()
+    threading.Timer(0.1, spacing).start()
 def ysize():
     alllist=root.winfo_geometry()
     splitlist = alllist.split("+")
