@@ -109,14 +109,14 @@ def mode(list1):
                             maxTimeRepVar = testVar
                             maxTimeRep = timeRep   
                         break 
-    return("The mode of this data set is " + maxTimeRepVar + " It was repeated " + str(maxTimeRep) + " times")
+    return("The mode of this data set is " +str(maxTimeRepVar) + " It was repeated " + str(maxTimeRep) + " times")
 #This function finds the frqencies of all items on the list and outputs the result
 def FrqLst(list1):
     mode(list1)
     modeString = ""
     list_mode = []
     #This for loop is to turn the dictmode into a list
-    for i in list1:
+    for i in dict_mode:
         var = dict_mode[i]
         list_mode.append(i + "," + str(var))
     i=0

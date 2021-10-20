@@ -243,6 +243,22 @@ def newFileClick():
             
 
 #This function converts a list of anything into a list of only the numbers
+def insertion_sort(array):
+    # Loop from the second element of the array until
+    # the last element
+    for i in range(1, len(array)):
+        key_item = str(array[i])
+
+        j = i - 1
+        while j >= 0 and float(array[j]) > float(key_item):
+            array[j + 1] = array[j]
+            j -= 1
+
+        # When you finish shifting the elements, you can position
+        # `key_item` in its correct location
+        array[j + 1] = key_item
+
+    return array
 def convert(fileList):
     file = []
     b=0
@@ -255,7 +271,8 @@ def convert(fileList):
                 b= b+1
             except ValueError:
                 b=b+1
-        return file
+        sortedFile =insertion_sort(file)
+        return sortedFile
 
 #This finction creates a file explorer window that allows the user to choose the file they would like to edit
 def revisedFile():
@@ -421,8 +438,7 @@ def spacing():
                         relheight =widHeight                        
                     )   
     #runs the command every 0.1 second
-    threading.Timer(0.1, spacing).start()
-
+    #threading.Timer(0.1, spacing).start()
 def ysize():
     alllist=root.winfo_geometry()
     splitlist = alllist.split("+")
